@@ -1,9 +1,14 @@
 section.gallery.content-section
-
+  
+  - var galleryClass = "col2"
+  if slice.slice_label
+    if slice.slice_label == "3col"
+      - galleryClass = "col3"
+  
   //- Loop through the gallery items
   each galleryItem in slice.value
   
-    .gallery-item
+    .gallery-item(class=galleryClass)
       img(src=galleryItem.image.url)
       != RichText.asHtml(galleryItem.description, ctx.linkResolver)
       

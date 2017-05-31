@@ -1,0 +1,24 @@
+extends ./layout.pug
+
+block body
+
+  //include ./partials/header.pug
+
+  -// Content Section
+  div.container(data-wio-id=page.id)
+
+    -// Display the slices
+    for slice in page.data.body
+      case slice.slice_type
+        when 'heading'
+          include ./partials/heading.pug
+        when 'textSection'
+          include ./partials/text-section.pug
+        when 'fullWidthImage'
+          include ./partials/full-width-image.pug
+        when 'highlight'
+          include ./partials/highlight.pug
+        when 'gallery'
+          include ./partials/gallery.pug
+        when 'video'
+          include ./partials/video.pug

@@ -1,14 +1,3 @@
-//header.site-header
-  a(href='./')
-    .logo Unknown
-  
-  nav
-    ul
-      each linkItem in menu.data.menuLinks
-        li
-          a(href=Link.url(linkItem.link, ctx.linkResolver))
-            != linkItem.label
-
 header#header
   div.container-lcl
     div.header-logo

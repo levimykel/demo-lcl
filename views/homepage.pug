@@ -3,16 +3,6 @@ extends ./layout.pug
 block prepend body
   body.homepage
     
-    //include ./partials/header.pug
-    
-    -// Homepage Banner Section
-    //section.homepage-banner(style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(' + home.data.backgroundImage.url + ')')
-      .banner-content.container
-        h2.banner-title !{RichText.asText(home.data.title)}
-        p.banner-description !{RichText.asHtml(home.data.tagline, ctx.linkResolver)}
-        if ( home.data.buttonLink && home.data.buttonText )
-          a.banner-button(href=Link.url(home.data.buttonLink, ctx.linkResolver)) !{home.data.buttonText}
-    
     -// Content Section
     div.container(data-wio-id=home.id)
     

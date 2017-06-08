@@ -1,0 +1,30 @@
+- var form = slice.value[0]
+- var field1 = 'First Name'
+- var field2 = 'Last Name'
+- var field3 = 'Email'
+- var submitText = 'Submit'
+
+if form.field1 && form.field1 !== ""
+  - field1 = form.field1
+
+if form.field2 && form.field2 !== ""
+  - field2 = form.field2
+
+if form.field3 && form.field3 !== ""
+  - field3 = form.field3
+
+if form.linkText && form.linkText !== ""
+  - submitText = form.linkText
+
+section.form.content-section
+  form(action='#')
+    div.first-name
+      span !{field1}
+      input(type='text', name='field1')
+    div.last-name
+      span !{field2}
+      input(type='text', name='field2')
+    div.email
+      span !{field3}
+      input(type='text', name='field3')
+    a.submit-button(href="#") !{submitText}

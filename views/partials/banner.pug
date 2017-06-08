@@ -3,6 +3,7 @@
 section.banner.content-section
   img(src=banner.image.url)
   div.cta-text
-    != banner.title[0].text
-  a.cta-button(href=ctx.linkResolver(banner.link))
-    != banner.linkText[0].text
+    != RichText.asText(banner.title)
+  if banner.linkText[0].text
+    a.cta-button(href=ctx.linkResolver(banner.link))
+      != RichText.asHtml(banner.linkText, ctx.linkResolver)

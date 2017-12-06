@@ -52,14 +52,13 @@ app.use((req, res, next) => {
 
 // Route for the homepage
 app.get('/', (req, res, next) => {
-//  req.prismic.api.getSingle("homepage")
-//  .then((home) => {
-//    res.render('homepage', { home });
-//  })
-//  .catch((error) => {
-//    next(`error when retriving homepage ${error.message}`);
-//  });
-  res.redirect('/page/particuliers');
+  req.prismic.api.getSingle("homepage")
+  .then((home) => {
+    res.render('homepage', { home });
+  })
+  .catch((error) => {
+    next(`error when retriving homepage ${error.message}`);
+  });
 });
 
 // Route for pages

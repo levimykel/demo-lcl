@@ -6,7 +6,7 @@ section.gallery.content-section
       - galleryClass = "col3"
   
   //- Loop through the gallery items
-  each galleryItem in slice.value
+  each galleryItem in slice.items
   
     .gallery-item(class=galleryClass)
       img(src=galleryItem.image.url)

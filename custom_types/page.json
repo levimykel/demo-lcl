@@ -1,138 +1,265 @@
 {
-  "Main" : {
+  "Principal" : {
     "uid" : {
-      "type" : "UID",
       "config" : {
-        "placeholder" : "meaningful-unique-identifier...",
-        "label" : "Unique ID"
+        "placeholder" : "adresse-optimisee-pour-le-referencement",
+        "label" : "Ecriture de l'URL"
+      },
+      "type" : "UID"
+    },
+    "titre" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Titre",
+        "placeholder" : "Livret Développement Durable"
       }
     },
     "body" : {
       "type" : "Slices",
-      "fieldset" : "Page content",
+      "fieldset" : "Contenu modulable",
       "config" : {
-        "labels" : {
-          "textSection" : [ {
-            "name" : "1col",
-            "display" : "1 Column"
-          }, {
-            "name" : "2col",
-            "display" : "2 Columns"
-          } ]
-        },
         "choices" : {
+          "fomulaire" : {
+            "type" : "Slice",
+            "non-repeat" : {
+              "formulaire" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "formulaire_de_contact" ],
+                  "label" : "Formulaire",
+                  "placeholder" : "Sélectionner un formulaire"
+                }
+              }
+            },
+            "fieldset" : "Fomulaire",
+            "description" : "Fomulaire pour les slices",
+            "icon" : "face"
+          },
+          "video" : {
+            "type" : "Slice",
+            "non-repeat" : {
+              "video" : {
+                "type" : "Embed",
+                "config" : {
+                  "label" : "Vidéo",
+                  "placeholder" : "Coller ici l'adresse Youtube"
+                }
+              }
+            },
+            "fieldset" : "Video",
+            "description" : "Video embed",
+            "icon" : "face"
+          },
           "heading" : {
-            "type" : "StructuredText",
-            "fieldset" : "Section Heading",
-            "config" : {
-              "placeholder" : "Text...",
-              "single" : "heading1, heading2, heading3"
-            }
+            "type" : "Slice",
+            "non-repeat" : {
+              "heading" : {
+                "type" : "StructuredText",
+                "fieldset" : "Titre de section",
+                "config" : {
+                  "placeholder" : "Text...",
+                  "single" : "heading1, heading2, heading3"
+                }
+              }
+            },
+            "fieldset" : "Titre",
+            "description" : "Titre de section",
+            "icon" : "face"
           },
           "textSection" : {
-            "type" : "StructuredText",
-            "fieldset" : "Text Section",
-            "config" : {
-              "placeholder" : "Text...",
-              "labels" : [ "quote" ]
-            }
+            "type" : "Slice",
+            "non-repeat" : {
+              "text" : {
+                "type" : "StructuredText",
+                "fieldset" : "Texte",
+                "config" : {
+                  "placeholder" : "Texte libre",
+                  "label" : "Texte libre",
+                  "labels" : [ "Citation" ]
+                }
+              }
+            },
+            "fieldset" : "Texte",
+            "description" : "Section de texte",
+            "icon" : "face"
           },
           "fullWidthImage" : {
-            "type" : "Image",
-            "fieldset" : "Full Width Image",
-            "config" : {
-              "constraint" : {
-                "width" : 980,
-                "height" : 300
+            "type" : "Slice",
+            "non-repeat" : {
+              "image" : {
+                "type" : "Image",
+                "fieldset" : "Image pleine largeur",
+                "config" : {
+                  "constraint" : {
+                    "width" : 980,
+                    "height" : 300
+                  }
+                }
               }
-            }
+            },
+            "fieldset" : "Image",
+            "description" : "Image pleine largeur",
+            "icon" : "face"
+          },
+          "banner" : {
+            "type" : "Slice",
+            "repeat" : {
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "placeholder" : "Accroche de la bannière",
+                  "single" : "heading2"
+                }
+              },
+              "link" : {
+                "type" : "Link",
+                "fieldset" : "Lien du bouton",
+                "config" : {
+                  "placeholder" : "Optional Link"
+                }
+              },
+              "linkText" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "placeholder" : "Libellé du bouton",
+                  "labels" : [ "Client", "Prospect" ]
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "fieldset" : "Image large",
+                "config" : {
+                  "constraint" : {
+                    "width" : 980,
+                    "height" : 300
+                  }
+                }
+              }
+            },
+            "fieldset" : "Bannière",
+            "description" : "Bannière pleine page",
+            "icon" : "face"
           },
           "highlight" : {
-            "type" : "Group",
-            "fieldset" : "Highlight",
-            "config" : {
-              "repeat" : false,
-              "fields" : {
-                "title" : {
-                  "type" : "StructuredText",
-                  "config" : {
-                    "placeholder" : "Highlight Title",
-                    "single" : "heading2"
-                  }
-                },
-                "headline" : {
-                  "type" : "StructuredText",
-                  "config" : {
-                    "placeholder" : "Highlight Headline",
-                    "single" : "heading3"
-                  }
-                },
-                "link" : {
-                  "type" : "Link",
-                  "fieldset" : "Optional Link",
-                  "config" : {
-                    "placeholder" : "Optional Link"
-                  }
-                },
-                "linkText" : {
-                  "type" : "Text",
-                  "config" : {
-                    "placeholder" : "Optional Link Text"
-                  }
-                },
-                "image" : {
-                  "type" : "Image",
-                  "config" : {
-                    "constraint" : {
-                      "width" : 727,
-                      "height" : 402
-                    }
+            "type" : "Slice",
+            "repeat" : {
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "placeholder" : "Titre",
+                  "single" : "heading2"
+                }
+              },
+              "headline" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "placeholder" : "Sur titre",
+                  "single" : "heading3"
+                }
+              },
+              "link" : {
+                "type" : "Link",
+                "fieldset" : "Optional Link",
+                "config" : {
+                  "placeholder" : "Lien"
+                }
+              },
+              "linkText" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du lien"
+                }
+              },
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 727,
+                    "height" : 402
                   }
                 }
               }
-            }
+            },
+            "fieldset" : "Focus Produit",
+            "description" : "Présentation produit",
+            "icon" : "face"
           },
           "gallery" : {
-            "type" : "Group",
-            "fieldset" : "Image Gallery",
-            "config" : {
-              "repeat" : true,
-              "fields" : {
-                "image" : {
-                  "type" : "Image",
-                  "config" : {
-                    "placeholder" : "Image",
-                    "constraint" : {
-                      "width" : 727,
-                      "height" : 402
-                    }
-                  }
-                },
-                "description" : {
-                  "type" : "StructuredText",
-                  "config" : {
-                    "placeholder" : "Image Description...",
-                    "single" : "paragraph"
-                  }
-                },
-                "link" : {
-                  "type" : "Link",
-                  "fieldset" : "Optional Link",
-                  "config" : {
-                    "placeholder" : "Optional Link"
-                  }
-                },
-                "linkText" : {
-                  "type" : "Text",
-                  "config" : {
-                    "placeholder" : "Optional Link Text"
+            "type" : "Slice",
+            "repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "placeholder" : "Image",
+                  "constraint" : {
+                    "width" : 727,
+                    "height" : 402
                   }
                 }
+              },
+              "description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "placeholder" : "Description",
+                  "single" : "paragraph"
+                }
+              },
+              "link" : {
+                "type" : "Link",
+                "fieldset" : "Lien",
+                "config" : {
+                  "placeholder" : "Lien"
+                }
+              },
+              "linkText" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du lien"
+                }
               }
-            }
+            },
+            "fieldset" : "Gallery",
+            "description" : "Image Gallery",
+            "icon" : "face"
+          },
+          "form" : {
+            "type" : "Slice",
+            "non-repeat" : {
+              "field1" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du champs 1"
+                }
+              },
+              "field2" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du champs 2"
+                }
+              },
+              "field3" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du champs 3"
+                }
+              },
+              "linkText" : {
+                "type" : "Text",
+                "config" : {
+                  "placeholder" : "Libellé du lien"
+                }
+              }
+            },
+            "fieldset" : "Formulaire",
+            "description" : "Formulaire",
+            "icon" : "face"
           }
         }
       }
     }
-  }
+  },
+  "Référencement" : { },
+  "Médias sociaux" : { }
 }

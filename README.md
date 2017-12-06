@@ -6,9 +6,9 @@ Here are the [prismic repository](https://lcl-landing-demo.prismic.io/documents/
 
 
 This demo used the normal demo slices while adding:
-* CTA Banner
-* An email form
-* A dropdown to select user roles
+- CTA Banner
+- An email form
+- A dropdown to select user roles
 
 ------------------------------------
 
@@ -25,7 +25,7 @@ Landing Page 2
 
 This software is licensed under the Apache 2 license, quoted below.
 
-Copyright 2013-2017 Prismic.io (http://prismic.io).
+Copyright 2017 Prismic.io (http://prismic.io).
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
 

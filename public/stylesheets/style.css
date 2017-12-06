@@ -331,6 +331,7 @@ footer a {
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 13px;
   }
 }
 @media (max-width: 767px) {
@@ -346,7 +347,23 @@ footer a {
   }
   .content-section {
     margin-bottom: 2rem;
-  } 
+  }
+  #header {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  #header .header-logo {
+    position: relative;
+  }
+  #header .site-header nav {
+    float: none;
+    text-align: center;
+  }
+  #header .site-header {
+    height: auto;
+    padding: 13px 20px 0;
+  }
+  /*
   .site-header {
     height: auto;
   }
@@ -367,6 +384,10 @@ footer a {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  */
+  header .user-select {
+    display: none;
   }
   .homepage-banner {
     margin: 0 0 40px;

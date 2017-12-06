@@ -2,7 +2,7 @@
 
 This demo is based off of the [prismic-demo](https://github.com/arnaudlewis/prismic-demo).
 
-Here are the [prismic repository](https://lcl-landing-demo.prismic.io/documents/working/) and the [live demo site](https://frozen-cove-89894.herokuapp.com).
+Here are the [prismic repository](https://lcl-landing-demo.prismic.io/documents/working/), the [live demo site](https://frozen-cove-89894.herokuapp.com), and the [live "development environment"](https://stormy-sea-16517.herokuapp.com). 
 
 
 This demo used the normal demo slices while adding:

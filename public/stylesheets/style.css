@@ -12,6 +12,9 @@
 .content-section {
   margin-bottom: 3.75rem;
 }
+.homepage .content-section {
+  padding-top: 50px;
+}
 
 /* Prismic edit button */
 .wio-link {
